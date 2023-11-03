@@ -25,15 +25,7 @@ function CalorieCalc() {
 		fat: 0,
 	});
 
-	// const [circleLength, setCircleLength] = createStore({
-    // circumference:"0",
-    // carbs: "0",
-    // protein: "0",
-    // fat: "0",
-	// carbRotation: "180deg",
-	// proteinRotation: "180deg",
-	// fatRotation: "180deg"
-  	// })
+
 
 	const [showResults, setShowResults] = createSignal(true);
 
@@ -132,7 +124,6 @@ function CalorieCalc() {
 			carbs: carbs,
 		});
 		setShowResults(true);
-    // getCircleLength();
 	};
 
 	const handleLifestyleChange = (e) => {
@@ -175,25 +166,7 @@ function CalorieCalc() {
 		calculateMacronutrients();
     
 	};
-  	// const getCircleLength = () => {
-    // const circumference = document.querySelector("circle").getTotalLength()
-    // const carbLength = circumference * (1 - macroPercentages[results.carbIndex].carb)
-    // const proteinLength = circumference * (1 - macroPercentages[results.carbIndex].protein)
-    // const fatLength = circumference * (1 - macroPercentages[results.carbIndex].fat)
-    // setCircleLength("circumference", circumference.toString())
-    // setCircleLength("carbs", carbLength.toString())
-    // setCircleLength("protein", proteinLength.toString())
-    // setCircleLength("fat", fatLength.toString())
-	// let carbRotation = (360 * macroPercentages[results.carbIndex].carb) 
-	// let proteinRotation = (360 * macroPercentages[results.carbIndex].protein) 
-	// let fatRotation = (360 * macroPercentages[results.carbIndex].fat)
-	// setCircleLength("carbRotation", carbRotation.toString())
-	// setCircleLength("proteinRotation", proteinRotation.toString())
-	// setCircleLength("fatRotation", fatRotation.toString())
-	// console.log("protein rotation:", circleLength.proteinRotation)
-	// console.log("carb rotation:", circleLength.carbRotation)
-	// console.log("fat rotation:", circleLength.fatRotation)
-  	// }
+  	
 
 	return (
 	<>
@@ -523,7 +496,6 @@ function CalorieCalc() {
 
 
 			<div class="results_wrapper" data-show-results={showResults()}>
-				{/* <div className="results_options_wrapper"> */}
 				<div class="option_wrapper option_exercise">
 					<h3>How often do you exercise?</h3>
                         <div class='option'>
@@ -593,10 +565,8 @@ function CalorieCalc() {
 						+
 					</button>
 					</div>
-					{/* <p>I want a {carbOptions[results.carbIndex]} Carbohydrate Intake</p> */}
 				</div>
-				{/* </div> */}
-				{/* <div class="results"> */}
+				
 				<div class="results_section results_cals">
 					<div >
 					<p class="number">{results.adjustedCalories}</p>
@@ -607,40 +577,23 @@ function CalorieCalc() {
 
 					<div class="results_section results_macronutrients">
 						<h4>Carbs</h4>
-						{/* <div class="number_wrapper"> */}
-							{/* <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{transform: `rotate(${circleLength.carbRotation})`}}>
-							<circle cx="50" cy="50" r="45" stroke-dasharray={circleLength.circumference} stroke-dashoffset={circleLength.carbs}/>
-							</svg> */}
-						{/* </div> */}
 						<p class="number"> {macronutrients.carbs}g</p>
 						<p>{100 * macroPercentages[results.carbIndex].carb}%</p>
 					</div>
 
 					<div class="results_section results_macronutrients">
 						<h4>Protein</h4>
-						{/* <div class="number_wrapper"> */}
-							{/* <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{transform:"rotate(180deg)"}}>
-							<circle cx="50" cy="50" r="45" stroke-dasharray={circleLength.circumference} stroke-dashoffset={circleLength.protein} />
-							</svg> */}
-						{/* </div> */}
 						<p class="number"> {macronutrients.protein}g</p>
 						<p>{100 * macroPercentages[results.carbIndex].protein}%</p>
 					</div>
 
 					<div class="results_section results_macronutrients">
 						<h4>Fat</h4>
-						{/* <div class="number_wrapper"> */}
-							{/* <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{transform: `rotate(${circleLength.fatRotation})`}}>
-							<circle cx="50" cy="50" r="45" stroke-dasharray={circleLength.circumference} stroke-dashoffset={circleLength.fat}/>
-							</svg> */}
-						{/* </div> */}
 						<p class="number"> {macronutrients.fat}g</p>
 						<p>{100 * macroPercentages[results.carbIndex].fat}%</p>
 					</div>
 
-				{/* <div className="bar" style={{background: `linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(9,9,121,1) ${100 * macroPercentages[results.carbIndex].carb}%, rgba(0,31,255,1) ${100 * macroPercentages[results.carbIndex].carb}%, rgba(0,31,255,1) ${100 * (macroPercentages[results.carbIndex].carb + macroPercentages[results.carbIndex].protein)}%, rgba(0,99,255,1) 56%)`}}></div> */}
 				</div>
-				{/* </div> */}
 						
 			</div>
 		<style>{`
