@@ -38,31 +38,34 @@ nav {
     gap: 2em;
     padding-inline: 2em;
   }
-  ul a {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-      opacity: .8;
-      transition: all 200ms ease-in-out 100ms;
-      }
-  ul a:hover, ul a:focus-visible{
-    opacity: 1;
-    border-bottom: 1px solid currentColor;
+  a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    opacity: .7;
+    transition: all 200ms ease-in-out 100ms;
+  } 
 
-  }
+
   .current-page{
     opacity: 1;
-    border-bottom: 1px solid currentColor;
   }
+
+  a:hover, a:focus-visible{
+    opacity: 1;
+  }
+
   ul #contact {
       border: 1px solid currentColor;
       padding: 0.5em 1em;
       border-radius: 3px;
       }
-    ul #contact:hover, ul #contact:focus-visible{
-      background-color: hsl(var(--accent-color));
-      color: hsl(var(--bg-color));
-    }
+  ul #contact:hover, ul #contact:focus-visible{
+    background-color: hsl(var(--accent-color));
+    color: hsl(var(--bg-color));
+  }
+ 
   .menu-toggle{
     display: none;
   }

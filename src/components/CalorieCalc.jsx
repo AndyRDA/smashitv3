@@ -605,7 +605,16 @@ function CalorieCalc() {
 				left:0;
 				right: 0;
 				border-radius: 5px;
-				background: linear-gradient(90deg, hsla(189 86% 53% / .8) 0%, hsla(189 86% 53% / .8) ${100 * macroPercentages[results.carbIndex].carb}%, hsla(189 86% 53% / .6) ${100 * macroPercentages[results.carbIndex].carb}%, hsla(189 86% 53% / .6) ${100 * (macroPercentages[results.carbIndex].carb + macroPercentages[results.carbIndex].protein)}%, hsla(189 86% 53% / .4) 56%);
+				background: linear-gradient(90deg, 
+                    hsla(189 86% 53% / .8) 0%, 
+                    hsla(189 86% 53% / .8) ${100 * macroPercentages[results.carbIndex].carb -1}%,
+                    hsla(0 0% 0%) ${100 * macroPercentages[results.carbIndex].carb -1}%, 
+                    hsla(0 0% 0%) ${100 * macroPercentages[results.carbIndex].carb +1}%, 
+                    hsla(189 86% 53% / .6) ${100 * macroPercentages[results.carbIndex].carb}%, 
+                    hsla(189 86% 53% / .6) ${100 * (macroPercentages[results.carbIndex].carb + macroPercentages[results.carbIndex].protein) -1}%, 
+                    hsla(0 0% 0%) ${100 * (macroPercentages[results.carbIndex].carb + macroPercentages[results.carbIndex].protein) -1}%, 
+                    hsla(0 0% 0%) ${100 * (macroPercentages[results.carbIndex].carb + macroPercentages[results.carbIndex].protein) +1}%, 
+                    hsla(189 86% 53% / .4) 56%);
 			}`
 			}
 		</style>
