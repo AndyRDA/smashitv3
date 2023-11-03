@@ -1,0 +1,104 @@
+
+nav {
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: hsl(var(--bg-color));
+    color: hsl(var(--bg-contrast));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  nav .logo__container {
+    height: 100%;
+    padding-inline: 1em;
+  }
+  nav svg {
+    height: 100%;
+    width: 4em;
+  }
+  
+  
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    gap: 2em;
+    padding-inline: 2em;
+  }
+  ul a {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      opacity: .8;
+      transition: all 200ms ease-in-out 100ms;
+      }
+  ul a:hover, ul a:focus-visible{
+    opacity: 1;
+    border-bottom: 1px solid currentColor;
+
+  }
+  .current-page{
+    opacity: 1;
+    border-bottom: 1px solid currentColor;
+  }
+  ul #contact {
+      border: 1px solid currentColor;
+      padding: 0.5em 1em;
+      border-radius: 3px;
+      }
+    ul #contact:hover, ul #contact:focus-visible{
+      background-color: hsl(var(--accent-color));
+      color: hsl(var(--bg-color));
+    }
+  .menu-toggle{
+    display: none;
+  }
+  @media (max-width: 755px) {
+  
+    .menu-toggle{
+      display: block;
+      border: none;
+      background-color: hsl(var(--bg-color));
+      padding: 1em;
+      cursor: pointer;
+    }
+    .menu-toggle svg{
+      background-color: hsl(var(--bg-color));
+      fill: hsl(var(--bg-contrast));
+      border: none;
+      outline: none;
+      width: 2em;
+    }
+      ul{
+        position: absolute;
+        flex-direction: column;
+        top: 5rem;
+        /* inset: 0; */
+        /* z-index: 99; */
+        height: 100vh;
+        padding-bottom: 30vh;
+        width: 100vw;
+        gap: 0;
+        margin: 0;
+        text-align: center;
+        transform:scale(0);
+        transform-origin: top right;
+        background-color: hsl(var(--bg-color));
+        transition: transform 0.3s ease-in-out 0.2s;
+      }
+      ul[aria-expanded="true"] {
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        transform:scale(1);
+        color: inherit;
+      }
+      ul li a {
+        padding: 1em 4em;
+      }
+    }
