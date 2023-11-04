@@ -27,7 +27,7 @@ function CalorieCalc() {
 
 
 
-	const [showResults, setShowResults] = createSignal(false);
+	const [showResults, setShowResults] = createSignal(true);
 
 	const lifestyleOptions = [
 		"sedentary",
@@ -172,7 +172,7 @@ function CalorieCalc() {
 	<>
 		<div class="calc_wrapper" data-show-results={showResults()}>
 			<form data-show-results={showResults()}>
-				<div class="form_inputs" >
+				<div class="form_inputs" data-show-results={showResults()}>
 					<fieldset class="age_fieldset">
 						<label for="age" data-show-results={showResults()}>
 							<svg
@@ -197,6 +197,7 @@ function CalorieCalc() {
 							>
 							{details.age}
 							</input>
+                            <p>years</p>
 						</label>
 					</fieldset>
 
@@ -348,6 +349,7 @@ function CalorieCalc() {
 					>
 					{details.height}
 					</input>
+                    <p>cm</p>
 				</label>
 						</fieldset>
 
@@ -385,6 +387,7 @@ function CalorieCalc() {
 					>
 					{details.mass}
 					</input>
+                    <p>kg</p>
 				</label>
 						</fieldset>
 
@@ -427,19 +430,20 @@ function CalorieCalc() {
 					>
 					{details.fat}
 					</input>
+                    <p>%</p>
 				</label>
 						</fieldset>
 
-						<fieldset class="sex_fieldset">
+						<fieldset class="sex_fieldset" data-show-results={showResults()}>
 							<div className="sex_radio_group">
-				<input
+				                <input
 									type="radio"
 									name="sex"
 									onChange={updateDetails}
 									placeholder="sex"
 									value="male"
-									id="male"
-								></input>
+									id="male">
+                                </input>
 								<label class="sex_radio_label" for="male" data-show-results={showResults()}>
 									<svg
 										width="41"
@@ -478,15 +482,9 @@ function CalorieCalc() {
 									</svg>
 								</label>
 							</div>
-							<input
-								name="sex"
-								type="text"
-								onClick={updateDetails}
-								placeholder="sex"
-								value={details.sex}
-							>
-								{details.sex}
-							</input>
+							<p class="sex_label">
+								{details.sex || "Male | Female"}
+							</p>
 						</fieldset>
 				</div>
 				<button class="calc_btn" type="button" onClick={calculateCalories}>
@@ -544,6 +542,23 @@ function CalorieCalc() {
 					<p>I want to {phaseDescription[results.phaseIndex]}</p>
 				</div>
 
+				<div class="results_section results_cals">
+                    <div class="results_cals_wrapper">
+					<div >
+					<p class="number">{results.adjustedCalories}</p>
+					</div>
+					<p>Total Daily Calories</p>
+                    </div>
+                    <svg class="results_cals_circle" height="200px" width="200px">
+                        <mask id="clip">
+                            <circle cx="100" cy="100" r="95" fill="white" stroke-width="10px" stroke="white"/>
+                            <line x1="100" y1="0" x2="100" y2="200" stroke-width="15" stroke="black"/>
+                            <line x1="0" y1="100" x2="200" y2="100" stroke-width="15" stroke="black"/>
+                        </mask>
+                        <circle mask="url(#clip)" cx="100" cy="100" r="95" fill="transparent" stroke-width="10px"/>
+                    </svg>
+				</div>
+
 				<div class="option_wrapper option_carbs">
 					<h3>What level of carbohydrate do you want to consume?</h3>
 					<div class='option'>
@@ -567,30 +582,24 @@ function CalorieCalc() {
 					</div>
 				</div>
 				
-				<div class="results_section results_cals">
-					<div >
-					<p class="number">{results.adjustedCalories}</p>
-					</div>
-					<p>Total Daily Calories</p>
-				</div>
 				<div className="macronutrients">
 
 					<div class="results_section results_macronutrients">
+						<p>{100 * macroPercentages[results.carbIndex].carb}%</p>
 						<h4>Carbs</h4>
 						<p class="number"> {macronutrients.carbs}g</p>
-						<p>{100 * macroPercentages[results.carbIndex].carb}%</p>
 					</div>
 
 					<div class="results_section results_macronutrients">
+						<p>{100 * macroPercentages[results.carbIndex].protein}%</p>
 						<h4>Protein</h4>
 						<p class="number"> {macronutrients.protein}g</p>
-						<p>{100 * macroPercentages[results.carbIndex].protein}%</p>
 					</div>
 
 					<div class="results_section results_macronutrients">
+						<p>{100 * macroPercentages[results.carbIndex].fat}%</p>
 						<h4>Fat</h4>
 						<p class="number"> {macronutrients.fat}g</p>
-						<p>{100 * macroPercentages[results.carbIndex].fat}%</p>
 					</div>
 
 				</div>
@@ -601,7 +610,7 @@ function CalorieCalc() {
 				content:"";
 				height: 5px;
 				position: absolute;
-				top: -1em;
+				top: 1.5em;
 				left:0;
 				right: 0;
 				border-radius: 5px;
