@@ -27,7 +27,7 @@ function CalorieCalc() {
 
 
 
-	const [showResults, setShowResults] = createSignal(true);
+	const [showResults, setShowResults] = createSignal(false);
 
 	const lifestyleOptions = [
 		"sedentary",
