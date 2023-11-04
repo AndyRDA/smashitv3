@@ -91,9 +91,9 @@ function CalorieCalc() {
 				return basalMetabolicRate;
 			}
 
-			let maintenanceCalories =
+			let baseCalories =
 				details.fat > 0 ? katchCalorieFormula() : mifflinCalorieFormula();
-			setResults("baseCalories", maintenanceCalories);
+			setResults("baseCalories", baseCalories);
 			adjustCalories();
 			calculateMacronutrients();
 		}
@@ -167,6 +167,10 @@ function CalorieCalc() {
     
 	};
   	
+    const handleCalcBtn = (e) => {
+        calculateCalories()
+        document.getElementById("calc_btn").scrollIntoView({behavior: "smooth", block: "start"});
+    }
 
 	return (
 	<>
@@ -487,13 +491,13 @@ function CalorieCalc() {
 							</p>
 						</fieldset>
 				</div>
-				<button class="calc_btn" type="button" onClick={calculateCalories}>
+				<button id="calc_btn" class="calc_btn" type="button" onClick={handleCalcBtn}>
 					Calculate!{" "}
 				</button>
 			</form>
 
 
-			<div class="results_wrapper" data-show-results={showResults()}>
+			<div id="results_wrapper" class="results_wrapper" data-show-results={showResults()}>
 				<div class="option_wrapper option_exercise">
 					<h3>How often do you exercise?</h3>
                         <div class='option'>
