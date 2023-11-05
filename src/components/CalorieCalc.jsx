@@ -169,7 +169,10 @@ function CalorieCalc() {
   	
     const handleCalcBtn = (e) => {
         calculateCalories()
-        document.getElementById("calc_btn").scrollIntoView({behavior: "smooth", block: "start"});
+        window.innerWidth < 950 ?
+            document.getElementById("calc_btn").scrollIntoView({behavior: "smooth", block: "start"})
+            :
+            document.getElementById("exercise_wrapper").scrollIntoView({behavior: "smooth", block: "start"});
     }
 
 	return (
@@ -498,7 +501,7 @@ function CalorieCalc() {
 
 
 			<div id="results_wrapper" class="results_wrapper" data-show-results={showResults()}>
-				<div class="option_wrapper option_exercise">
+				<div class="option_wrapper option_exercise" id="exercise_wrapper">
 					<h3>How often do you exercise?</h3>
                         <div class='option'>
                         <button
