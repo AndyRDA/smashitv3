@@ -50,6 +50,7 @@ nav {
 
   .current-page{
     opacity: 1;
+    color: hsl(var(--accent-color));
   }
 
   a:hover, a:focus-visible{
