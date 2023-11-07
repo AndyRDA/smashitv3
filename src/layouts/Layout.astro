@@ -1,16 +1,16 @@
 ---
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer.astro';
-import '../components/CalorieCalc.css'
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.astro";
+import "../components/CalorieCalc.css";
 interface Props {
 	title: string;
-  metaName: string;
-  metaContent: string;
+	metaName: string;
+	metaContent: string;
 }
 
 const { title } = Astro.props;
-const {metaName} = Astro.props;
-const {metaContent} = Astro.props
+const { metaName } = Astro.props;
+const { metaContent } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,44 +23,71 @@ const {metaContent} = Astro.props
 		<meta name={metaName} content={metaContent} />
 	</head>
 	<body>
-		<Navbar client:load/>
-		  <slot />  
-    <Footer />
+		<Navbar client:load />
+		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>
-*,
-*::before,
-*::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font: inherit;
-}
+	*,
+	*::before,
+	*::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font: inherit;
+	}
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
 
-:root {
-	--bg-color: 0 0% 0%;
-	--bg-contrast: 189 86% 98%;
-	--accent-color: 189 86% 53%;
-  --gutter: 5vw;
-}
+	:root {
+		--bg-color: 0 0% 0%;
+		--bg-contrast: 189 86% 98%;
+		--accent-color: 189 86% 53%;
+		--gutter: 5vw;
+	}
 
-body {
-	background-color: hsl(var(--bg-color));
-	color: hsl(var(--bg-contrast) / 0.8);
-	font-family: "Poppins", sans-serif;
-}
+	body {
+		background-color: hsl(var(--bg-color));
+		color: hsl(var(--bg-contrast) / 0.8);
+		font-family: "Poppins", sans-serif;
+	}
 
-a{
-  text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
+	a {
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+	}
 
+  h1 {
+		font-size: clamp(2rem, 1.2rem + 1vw, 3rem);
+		text-align: start;
+		max-width: 50ch;
+		font-weight: 700;
+		padding-block: 1em;
+		line-height: 1.3;
+	}
 
+  h2{
+    
+		font-size: clamp(1.8rem, 1.1rem + 1vw, 2.8rem);
+		text-align: start;
+		max-width: 50ch;
+		font-weight: 700;
+		padding-block: 1em;
+		line-height: 1.3;
+	
+  }
 
+  h3{
+		font-size: clamp(1.6rem, 1rem + 1vw, 2.6rem);
+
+  }
+
+  p{
+    font-size: clamp(1rem, 1rem + 0.5vw, 1.75rem);
+		line-height: 1.4;
+  }
 </style>
