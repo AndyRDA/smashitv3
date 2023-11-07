@@ -44,14 +44,21 @@ input[type=number] {
 
 :root {
 	--bg-color: 0 0% 0%;
-	--accent-color: 189 86% 53%;
 	--bg-contrast: 189 86% 98%;
+	--accent-color: 189 86% 53%;
+  --gutter: 5vw;
 }
 
 body {
 	background-color: hsl(var(--bg-color));
-	color: hsl(var(--bg-contrast));
+	color: hsl(var(--bg-contrast) / 0.8);
 	font-family: "Poppins", sans-serif;
+}
+
+a{
+  text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 

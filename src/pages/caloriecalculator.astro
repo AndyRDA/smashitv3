@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import CalorieCalc from "../components/CalorieCalc";
-import CalorieInfo from "../components/CalorieInfo.astro"
+import CalorieInfo from "../components/CalorieInfo.astro";
 const metaName =
 	"Calorie Calculator & Personalized Meal Plans | Smashit Personal Training";
 const metaContent =
@@ -17,9 +17,9 @@ const metaContent =
 		<div class="skew-divider"></div>
 		<div class="title-wrapper">
 			<h1>
-				Calculate your <span class="title_calorie">daily calorie needs</span> and macronutrient goals with our
-				easy-to-use calorie calculator, and get a personalized meal plan from
-				Smashit personal trainers.
+				Calculate your <span class="title_calorie">daily calorie needs</span>
+				and macronutrient goals with our easy-to-use calorie calculator, and get
+				a personalized meal plan from Smashit personal trainers.
 			</h1>
 			<p class="sub-title">
 				Whether you're trying to lose, maintain, or gain weight, our calorie
@@ -28,16 +28,16 @@ const metaContent =
 			</p>
 		</div>
 		<div class="cta-wrapper">
-			<button class="cta"> Learn more about SmashIt personal coaching</button>
+			<a class="cta" href="https://www.smashit.co.za/services" target="_blank"> Learn more about Smash-It personal coaching</a>
 		</div>
 	</header>
 	<CalorieCalc client:only />
-    <CalorieInfo />
+	<CalorieInfo />
 </Layout>
 
 <style>
 	header {
-		padding: 3rem 1rem 6rem 1rem;
+		padding: 3rem var(--gutter) 10rem var(--gutter);
 		background-color: hsl(var(--bg-color));
 		color: hsl(var(--bg-color));
 		margin-block: 6rem 0;
@@ -53,17 +53,17 @@ const metaContent =
 		z-index: 0;
 		transform: skewY(-5deg);
 		transform-origin: top left;
-        background: hsl(var(--bg-contrast) /0.8);
-        background-image: url('../assets/smashit vector logo blur white.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-blend-mode:lighten;
+		background: hsl(var(--bg-contrast) / 0.8);
+		background-image: url("../assets/smashit vector logo blur white.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-blend-mode: lighten;
 	}
 
 	.title-wrapper {
 		z-index: 5;
-        /* outline: 1px solid green; */
+		/* outline: 1px solid green; */
 	}
 
 	h1 {
@@ -75,24 +75,24 @@ const metaContent =
 		line-height: 1.3;
 	}
 
-    .title_calorie{
-        position: relative;
-        /* color: hsl(var(--accent-color)); */
-        /* font-style: italic; */
-        /* background-color: hsl(var(--accent-color) / 0.7); */
-    }
-@media (min-width: 560px){
-    .title_calorie::before{
-        content: url('../assets/brushstroke.svg');
-        /* height: 1em; */
-        /* width: 100%; */
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        transform: translateY(-0.3em) scale(1.1, 0.58) rotate(-4deg);
-        /* outline: 1px solid red; */
-    }
-}
+	.title_calorie {
+		position: relative;
+		/* color: hsl(var(--accent-color)); */
+		/* font-style: italic; */
+		/* background-color: hsl(var(--accent-color) / 0.7); */
+	}
+	@media (min-width: 560px) {
+		.title_calorie::before {
+			content: url("../assets/brushstroke.svg");
+			/* height: 1em; */
+			/* width: 100%; */
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			transform: translateY(-0.3em) scale(1.1, 0.58) rotate(-4deg);
+			/* outline: 1px solid red; */
+		}
+	}
 	.sub-title {
 		opacity: 0.7;
 		font-size: clamp(1rem, 1rem + 0.5vw, 1.75rem);
@@ -104,26 +104,28 @@ const metaContent =
 		display: grid;
 		justify-content: right;
 		align-items: center;
-		padding: 4vw 2vw;
-		z-index: 5;
-        /* outline: 1px solid blue; */
-
+		/* padding: 4vw 2vw; */
+        padding-block: 32px;
+		z-index: 99;
+		/* outline: 1px solid blue; */
 	}
 
 	.cta {
 		padding: 1rem 2rem;
 		max-width: 30ch;
 		border: 3px solid hsl(var(--bg-color) / 0.3);
-		border-radius: 400px;
-        background-color: hsl(var(--accent-color));
+		border-radius: 20px 0;
+		background-color: hsl(var(--accent-color));
 		font-size: clamp(1rem, 1rem + 0.5vw, 1.75rem);
-        color: hsl(var(--bg-contrast));
-        box-shadow: 3px 3px 3px 0px hsl(0 0% 0% / 0.3);
-        transition: all 200ms ease-in-out;
+		color: hsl(var(--bg-contrast));
+		box-shadow: 3px 3px 3px 0px hsl(0 0% 0% / 0.3);
+		transition: all 200ms ease-in-out;
+        cursor: pointer;
 	}
-    
-    .cta:hover, .cta:focus-visible{
-        box-shadow: 5px 5px 3px 0px hsl(0 0% 0% / 0.5);
-        transform: scale(1.01);
-    }
+
+	.cta:hover,
+	.cta:focus-visible {
+		box-shadow: 5px 5px 3px 0px hsl(0 0% 0% / 0.5);
+		transform: scale(1.01);
+	}
 </style>

@@ -31,24 +31,22 @@ nav {
   }
   
   
-  ul {
+  .nav-list {
     display: flex;
     list-style: none;
     justify-content: space-evenly;
     gap: 2em;
     padding-inline: 2em;
   }
-  a {
+  
+  .nav-list a {
     position: relative;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
     opacity: .7;
     transition: all 200ms ease-in-out 100ms;
   } 
 
 
-  .current-page{
+  .nav-list .current-page{
     opacity: 1;
     color: hsl(var(--accent-color));
   }
@@ -57,12 +55,12 @@ nav {
     opacity: 1;
   }
 
-  ul #contact {
+  .nav-list #contact {
       border: 1px solid currentColor;
       padding: 0.5em 1em;
       border-radius: 3px;
       }
-  ul #contact:hover, ul #contact:focus-visible{
+  .nav-list #contact:hover, .nav-list #contact:focus-visible{
     background-color: hsl(var(--accent-color));
     color: hsl(var(--bg-color));
   }
@@ -83,12 +81,12 @@ nav {
     }
     .menu-toggle svg{
       background-color: hsl(var(--bg-color));
-      fill: hsl(var(--bg-contrast));
+      fill: hsl(var(--accent-color));
       border: none;
       outline: none;
       width: 2em;
     }
-      ul{
+      .nav-list{
         position: absolute;
         flex-direction: column;
         top: 5rem;
@@ -105,13 +103,13 @@ nav {
         background-color: hsl(var(--bg-color));
         transition: transform 0.3s ease-in-out 0.2s;
       }
-      ul[aria-expanded="true"] {
+      .nav-list[aria-expanded="true"] {
         transition: transform 0.3s ease-in-out;
         display: flex;
         transform:scale(1);
         color: inherit;
       }
-      ul li a {
+      .nav-list li a {
         padding: 1em 4em;
       }
     }
