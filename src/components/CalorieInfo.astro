@@ -1,0 +1,143 @@
+---
+import "./CalorieInfo.css";
+---
+
+<section>
+	<div class="skew-divider"></div>
+
+	<div class="text_wrapper">
+		<h2>Macronutrients</h2>
+		<p>
+			Macronutrients are the nutrients that your body needs in large amounts to
+			function properly. They are carbohydrates, protein, and fat. Each
+			macronutrient has a different role in your body:
+		</p>
+	</div>
+	<div class="card_wrapper">
+		<div class="card card_carbs">
+			<div class="card_text">
+				<h3>Carbohydrates</h3>
+				<p>
+					Carbohydrates are your body's main source of energy. They are found in
+					foods such as bread, pasta, rice, fruits, and vegetables.
+				</p>
+			</div>
+		</div>
+		<div class="card card_protein">
+			<div class="card_text">
+				<h3>Protein</h3>
+				<p>
+					Protein is essential for building and repairing muscle tissue. It is
+					also found in foods such as meat, poultry, fish, eggs, dairy products,
+					and legumes.
+				</p>
+			</div>
+		</div>
+		<div class="card card_fat">
+			<div class="card_text">
+				<h3>Fat</h3>
+				<p>
+					Fat is a source of energy and helps your body absorb certain vitamins
+					and minerals. It is also found in foods such as nuts, seeds, avocados,
+					and olive oil.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	section {
+		display: grid;
+		/* grid-template-columns: 1fr 2fr; */
+		gap: 2rem;
+		padding: 5rem 1rem 10rem 1rem;
+		position: relative;
+		color: hsl(var(--bg-color));
+	}
+	.skew-divider {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		transform: skewY(-5deg);
+		transform-origin: top left;
+		background: hsl(var(--bg-contrast));
+		/* background-image: url('../assets/smashit vector logo blur white.png'); */
+	}
+
+    .text_wrapper{
+        max-width: 60ch;
+
+    }
+
+	.text_wrapper h2 {
+		font-size: 1.4em;
+		padding-bottom: 1em;
+	}
+
+	h2,
+	h3 {
+		border-bottom: 2px solid hsl(var(--accent-color));
+	}
+
+	p {
+		padding-block: 2em;
+	}
+
+	.text_wrapper,
+	.card_wrapper {
+		z-index: 5;
+		color: inherit;
+	}
+
+	.card_wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 2em;
+	}
+	.card {
+        --innerRadius: 30px;
+        --padding: 2em;
+        --outerRadius: calc(var(--innerRadius) + var(--padding));
+		/* padding: 1em 2em; */
+        padding-block: var(--padding);
+        padding-inline: var(--padding);
+		border-radius: var(--outerRadius) 0;
+		position: relative;
+		background-position: right;
+		background-size: cover;
+        background-repeat: no-repeat;
+		overflow: hidden;
+		background-blend-mode: multiply;
+        /* border: 2px solid hsl(var(--accent-color) /.2); */
+        box-shadow: 5px 5px 10px 0px hsl(var(--accent-color) /.3);
+        flex-grow: 1;
+	}
+
+    .card_text{
+        background-color: hsl(var(--bg-contrast) / 0.9);
+        padding: 1em var(--padding);
+		border-radius: var(--innerRadius) 0;
+        width: fit-content;
+    }
+
+
+	.card h3 {
+		font-size: 1.3em;
+		padding-bottom: 1em;
+	}
+	.card p {
+		max-width: 20ch;
+	}
+
+	.card_carbs {
+		background-image: url("../assets/images/rice.jpg");
+	}
+	.card_protein {
+		background-image: url("../assets/images/bean.jpg");
+	}
+	.card_fat {
+		background-image: url("../assets/images/avo.jpg");
+	}
+</style>
