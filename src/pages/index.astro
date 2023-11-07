@@ -1,10 +1,132 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CalorieCalc from '../components/CalorieCalc';
+import Layout from "../layouts/Layout.astro";
+import CalorieCalc from "../components/CalorieCalc";
+import CalorieInfo from "../components/CalorieInfo.astro"
+const metaName =
+	"Calorie Calculator & Personalized Meal Plans | Smashit Personal Training";
+const metaContent =
+	"Calculate your daily calorie needs and macronutrient goals with our easy-to-use calorie calculator, and get a personalized meal plan from Smashit personal trainers. Reach your fitness goals in a healthy and sustainable way with Smashit!";
 ---
 
-<Layout title="Smashit! Calorie Calculator">
-	<CalorieCalc client:only/>
+<Layout
+	title="Smashit! Calorie Calculator"
+	metaName={metaName}
+	metaContent={metaContent}
+>
+	<header>
+		<div class="skew-divider"></div>
+		<div class="title-wrapper">
+			<h1>
+				Calculate your <span class="title_calorie">daily calorie needs</span> and macronutrient goals with our
+				easy-to-use calorie calculator, and get a personalized meal plan from
+				Smashit personal trainers.
+			</h1>
+			<p class="sub-title">
+				Whether you're trying to lose, maintain, or gain weight, our calorie
+				calculator and Smashit personal trainers can help you reach your goals
+				in a healthy and sustainable way.
+			</p>
+		</div>
+		<div class="cta-wrapper">
+			<button class="cta"> Learn more about SmashIt personal coaching</button>
+		</div>
+	</header>
+	<CalorieCalc client:only />
+    <CalorieInfo />
 </Layout>
+
+<style>
+	header {
+		padding: 3rem 1rem 6rem 1rem;
+		background-color: hsl(var(--bg-color));
+		color: hsl(var(--bg-color));
+		margin-block: 6rem 0;
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.skew-divider {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		transform: skewY(-5deg);
+		transform-origin: top left;
+        background: hsl(var(--bg-contrast) /0.8);
+        background-image: url('../assets/smashit vector logo blur white.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-blend-mode:lighten;
+	}
+
+	.title-wrapper {
+		z-index: 5;
+        /* outline: 1px solid green; */
+	}
+
+	h1 {
+		font-size: clamp(2rem, 1.2rem + 1vw, 3rem);
+		text-align: start;
+		max-width: 50ch;
+		font-weight: 700;
+		padding-block: 1em;
+		line-height: 1.3;
+	}
+
+    .title_calorie{
+        position: relative;
+        /* color: hsl(var(--accent-color)); */
+        /* font-style: italic; */
+        /* background-color: hsl(var(--accent-color) / 0.7); */
+    }
+@media (min-width: 560px){
+    .title_calorie::before{
+        content: url('../assets/brushstroke.svg');
+        /* height: 1em; */
+        /* width: 100%; */
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        transform: translateY(-0.3em) scale(1.1, 0.58) rotate(-4deg);
+        /* outline: 1px solid red; */
+    }
+}
+	.sub-title {
+		opacity: 0.7;
+		font-size: clamp(1rem, 1rem + 0.5vw, 1.75rem);
+		max-width: 50ch;
+		line-height: 1.4;
+	}
+
+	.cta-wrapper {
+		display: grid;
+		justify-content: right;
+		align-items: center;
+		padding: 4vw 2vw;
+		z-index: 5;
+        /* outline: 1px solid blue; */
+
+	}
+
+	.cta {
+		padding: 1rem 2rem;
+		max-width: 30ch;
+		border: 3px solid hsl(var(--bg-color) / 0.3);
+		border-radius: 400px;
+        background-color: hsl(var(--accent-color));
+		font-size: clamp(1rem, 1rem + 0.5vw, 1.75rem);
+        color: hsl(var(--bg-contrast));
+        box-shadow: 3px 3px 3px 0px hsl(0 0% 0% / 0.3);
+        transition: all 200ms ease-in-out;
+	}
+    
+    .cta:hover, .cta:focus-visible{
+        box-shadow: 5px 5px 3px 0px hsl(0 0% 0% / 0.5);
+        transform: scale(1.01);
+    }
+</style>
+
 
 
