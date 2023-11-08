@@ -47,8 +47,12 @@ const metaContent =
 <style>
 	header {
 		padding: 3rem var(--gutter) 10rem var(--gutter);
-		background-color: hsl(var(--bg-color));
+		background-color: hsl(var(--bg-contrast));
 		color: hsl(var(--bg-color));
+		background-image: url("../assets/images/smashitblurwhite.png");
+        background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 		margin-block: 6rem 0;
 		position: relative;
 		overflow: hidden;
@@ -58,16 +62,21 @@ const metaContent =
 
 	.skew-divider {
 		position: absolute;
-		inset: 0;
+		/* inset: 0; */
 		z-index: 0;
 		transform: skewY(-5deg);
+        bottom: -10rem;
+        left: 0;
+        height: 10rem;
+        width: 100%;
 		transform-origin: top left;
-		background: hsl(var(--bg-contrast) / 0.8);
+        background: hsl(var(--bg-color));
+		/* background: hsl(var(--bg-contrast) / 0.8);
 		background-image: url("../assets/images/smashitblurwhite.png");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
-		background-blend-mode: lighten;
+		background-blend-mode: lighten; */
 	}
 
 	.title-wrapper {
