@@ -4,6 +4,8 @@
 	width: 100vw;
 	padding-block: var(--gutter);
 	/* grid-template-areas: none; */
+	overflow: hidden;
+
 }
 
 form {

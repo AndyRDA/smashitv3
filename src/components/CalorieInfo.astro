@@ -3,7 +3,7 @@
 ---
 
 <section class="macros">
-	<div class="skew-divider"></div>
+	<div class="skew-divider skew-divider-top"></div>
 
 	<div class="text_wrapper">
 		<h2>What are macronutrients?</h2>
@@ -44,6 +44,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="skew-divider skew-divider-bottom"></div>
+
 </section>
 <section class="reasons">
 	<div class="skew-topper"></div>
@@ -123,30 +125,39 @@
 <style>
 	section {
         --asym-border: 30px 6px 30px 6px;
-		padding: 5rem var(--gutter) 12rem var(--gutter);
+		padding: 10rem var(--gutter) 12rem var(--gutter);
 		position: relative;
+        overflow: hidden;
 	}
 	.macros {
 		display: grid;
 		gap: 2rem;
 		color: hsl(var(--bg-color));
-	}
-
-	.skew-divider {
-		position: absolute;
-		inset: 0;
-		z-index: 0;
-		transform: skewY(-5deg);
-		transform-origin: top left;
-	}
-	.macros .skew-divider {
-		background: hsl(var(--bg-contrast) / 0.9);
+        background: hsl(var(--bg-contrast) / 0.9);
 		/* background: linear-gradient(185deg, yellow 10%, blue 40%); */
 		background-image: url("../assets/images/food.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
 		background-blend-mode: lighten;
+	}
+
+	.skew-divider {
+		position: absolute;
+		z-index: 0;
+		transform: skewY(-5deg);
+        height: 10rem;
+        width: 100%;
+	}
+	.macros .skew-divider-top {
+		background-color: hsl(var(--bg-color));
+        top: -10rem;
+        transform-origin: bottom right;
+	}
+	.macros .skew-divider-bottom {
+		background-color: hsl(var(--bg-color));
+        bottom: 0;
+        transform-origin: bottom right;
 	}
 
 	.text_wrapper {
