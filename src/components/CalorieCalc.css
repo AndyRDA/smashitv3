@@ -346,7 +346,11 @@ form[data-show-results="true"] {
 	.form[data-show-results="true"] fieldset {
 		--group-width: 2em;
 	}
-	.form_inputs[data-show-results="true"] {
+	
+	.form_inputs[data-show-results="true"]{
+		flex-wrap: nowrap;
+		flex-direction: column;
+		align-items: start;
 		justify-content: flex-start;
 	}
 
