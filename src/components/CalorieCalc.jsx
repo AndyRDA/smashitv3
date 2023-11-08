@@ -616,7 +616,7 @@ function CalorieCalc() {
 			</div>
 
             <div className="results-cta">
-                <a href="https://www.smashit.co.za/contact" className="results-cta_link">
+                <a href="https://www.smashit.co.za/contact" target="_blank" className="results-cta_link">
                     <p>Reach your fitness goals in a healthy and sustainable way with Smashit!</p>
                     <p class="results-cta_enquire">Enquire Now!</p>
                 </a>
