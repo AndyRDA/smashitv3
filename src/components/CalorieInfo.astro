@@ -319,12 +319,13 @@
 	.cta {
 		padding: 1rem 2rem;
 		max-width: 30ch;
-		border: 3px solid hsl(var(--bg-color) / 0.3);
+		/* border: 3px solid hsl(var(--bg-color) / 0.3); */
 		border-radius: 20px 6px;
 		background-color: hsl(var(--accent-color));
 		font-size: clamp(1rem, 1rem + 0.5vw, 1.75rem);
 		color: hsl(var(--bg-contrast));
-		box-shadow: 3px 3px 3px 0px hsl(0 0% 0% / 0.3);
+		box-shadow: 2px 2px 10px 0px hsl(var(--accent-color) / .4);
+		/* box-shadow: 3px 3px 3px 0px hsl(var(--accent-color) / 0.3); */
 		transition: all 200ms ease-in-out;
         cursor: pointer;
         opacity: 1;
@@ -332,7 +333,7 @@
 
 	.cta:hover,
 	.cta:focus-visible {
-		box-shadow: 5px 5px 3px 0px hsl(0 0% 0% / 0.5);
+		box-shadow: 5px 5px 10px 0px hsl(var(--accent-color) / 0.5);
 		transform: scale(1.01);
 	}
 </style>
