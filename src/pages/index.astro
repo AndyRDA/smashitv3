@@ -1,7 +1,12 @@
 ---
+import { getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import CalorieCalc from "../components/CalorieCalc";
 import CalorieInfo from "../components/CalorieInfo.astro";
+import smashitblur from "../assets/images/smashitblurwhite.png"
+
+
+const headerImg = await getImage({src: smashitblur, format: 'avif'})
 const metaName =
 	"Calorie Calculator & Personalized Meal Plans | Smashit Personal Training";
 const metaContent =
@@ -14,7 +19,7 @@ const metaContent =
 	metaContent={metaContent}
 >
 	<header>
-		<div class="skew-divider"></div>
+		<div class="skew-divider" ></div>
 		<div class="title-wrapper">
 			<h1>
 				Calculate your <span class="title_calorie">daily calorie needs</span>
@@ -58,7 +63,7 @@ const metaContent =
 		transform: skewY(-5deg);
 		transform-origin: top left;
 		background: hsl(var(--bg-contrast) / 0.8);
-		background-image: url("../assets/smashit vector logo blur white.png");
+		background-image: url("../assets/images/smashitblurwhite.png");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
@@ -122,8 +127,8 @@ const metaContent =
 	.cta {
 		padding: 1rem 2rem;
 		max-width: 30ch;
-		border: 3px solid hsl(var(--bg-color) / 0.3);
-		border-radius: 20px 0;
+		/* border: 3px solid hsl(var(--bg-color) / 0.5); */
+		border-radius: 30px 6px;
 		background-color: hsl(var(--accent-color));
 		font-size: clamp(1rem, 1rem + 0.5vw, 1.75rem);
 		color: hsl(var(--bg-contrast));

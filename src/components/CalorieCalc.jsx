@@ -435,7 +435,7 @@ function CalorieCalc() {
 					id="fat"
 					type="number"
 					onBlur={updateDetails}
-					placeholder="fat"
+					placeholder="body fat (optional)"
 					>
 					{details.fat}
 					</input>
@@ -615,7 +615,7 @@ function CalorieCalc() {
 						
 			</div>
 
-            <div className="results-cta">
+            <div class="results-cta" data-show-results={showResults()}>
                 <a href="https://www.smashit.co.za/contact" target="_blank" className="results-cta_link">
                     <p>Reach your fitness goals in a healthy and sustainable way with Smashit!</p>
                     <p class="results-cta_enquire">Enquire Now!</p>

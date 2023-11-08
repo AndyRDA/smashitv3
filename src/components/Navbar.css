@@ -24,10 +24,17 @@ nav {
   nav .logo__container {
     height: 100%;
     padding-inline: 1em;
+    display: flex;
+    align-items: center;
   }
   nav svg {
     height: 100%;
     width: 4em;
+  }
+
+  .logo_text{
+    width: auto;
+    height: 80%;
   }
   
   
