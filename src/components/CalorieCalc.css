@@ -174,6 +174,12 @@ form[data-show-results="true"] {
 	width: 300px;
 }
 
+.option_wrapper[data-show-results="true"]{
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: start;
+}
+
 .option_wrapper > h3 {
 	font-weight: bold;
 	text-align: center;
