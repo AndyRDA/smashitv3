@@ -169,10 +169,12 @@ function CalorieCalc() {
   	
     const handleCalcBtn = (e) => {
         calculateCalories()
+        // if(showResults() === false){
         window.innerWidth < 950 ?
             document.getElementById("calc_btn").scrollIntoView({behavior: "smooth", block: "start"})
             :
-            document.getElementById("exercise_wrapper").scrollIntoView({behavior: "smooth", block: "start"});
+            document.getElementById("cals_number").scrollIntoView({behavior: "smooth", block: "center"});
+        // }
     }
 
 	return (
@@ -549,12 +551,12 @@ function CalorieCalc() {
 					<p>I want to {phaseDescription[results.phaseIndex]}</p>
 				</div>
 
-				<div class="results_section results_cals">
+				<div class="results_section results_cals" id="results_cals">
                     <div class="results_cals_wrapper">
 					<div >
-					<p class="number">{results.adjustedCalories}</p>
+					<p class="number" id="cals_number">{results.adjustedCalories}</p>
 					</div>
-					<p>Total Daily Calories</p>
+					<p class="total_title">Total Daily Calories</p>
                     </div>
                     <svg class="results_cals_circle" height="200px" width="200px">
                         <mask id="clip">
@@ -612,12 +614,19 @@ function CalorieCalc() {
 				</div>
 						
 			</div>
+
+            <div className="results-cta">
+                <a href="https://www.smashit.co.za/contact" className="results-cta_link">
+                    <p>Reach your fitness goals in a healthy and sustainable way with Smashit!</p>
+                    <p class="results-cta_enquire">Enquire Now!</p>
+                </a>
+            </div>
 		<style>{`
 			.macronutrients::before{
 				content:"";
 				height: 5px;
 				position: absolute;
-				top: 1.5em;
+				top: 2em;
 				left:0;
 				right: 0;
 				border-radius: 5px;

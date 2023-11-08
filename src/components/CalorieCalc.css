@@ -1,7 +1,7 @@
 .calc_wrapper {
 	display: grid;
 	place-items: center;
-	max-width: 100vw;
+	width: 100vw;
 	padding-block: var(--gutter);
 }
 
@@ -177,11 +177,14 @@ form[data-show-results="true"] {
 .option_wrapper > h3 {
 	font-weight: bold;
 	text-align: center;
+    font-size: 1em;
 	/* padding-inline: 1em; */
 }
 
 .option_wrapper > p {
 	text-align: center;
+    font-size: 1em;
+    line-height: 1;
 }
 
 .option {
@@ -266,6 +269,12 @@ form[data-show-results="true"] {
 	font-size: 3em;
 }
 
+.results_cals .total_title{
+    max-width: 80%;
+    text-align: center;
+    margin-inline: auto;
+}
+
 .results_cals_wrapper {
 	grid-area: stack;
 	margin: auto;
@@ -286,12 +295,44 @@ form[data-show-results="true"] {
 	opacity: 0.7;
 }
 
+.results-cta{
+    padding-right: 1em;
+}
+
+.results-cta_link{
+    display: block;
+    max-width: 35ch;
+    padding: 1em;
+    border: 1px solid hsl(var(--accent-color) / 0.8);
+    border-radius: 30px 0 30px 0;
+    margin: 1em;
+}
+
+
+.results-cta_enquire{
+    background-color: hsl(var(--accent-color));
+    color: hsl(var(--bg-color) / .8);
+    text-align: center;
+    padding: .5em 1em;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin-inline: auto;
+    margin-block: 1em;
+    border-radius: 10px 0 10px 0;
+    box-shadow: 5px 5px 10px 0 hsl(var(--bg-contrast) / 0.2);
+
+}
+
+.results-cta_link:hover .results-cta_enquire, .results-cta_link:focus-visible .results-cta_enquire{
+    box-shadow: 5px 5px 10px 0 hsl(var(--bg-contrast) / 0.5);
+}
+
 @media (min-width: 950px) {
 	h1 {
 		text-align: center;
 	}
 	.calc_wrapper[data-show-results="true"] {
-		grid-template-columns: 200px 1fr;
+		grid-template-columns: 300px 1fr 300px;
 	}
 
 	.form[data-show-results="true"] fieldset {

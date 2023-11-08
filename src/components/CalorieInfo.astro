@@ -1,5 +1,5 @@
 ---
-import "./CalorieInfo.css";
+// import "./CalorieInfo.css";
 ---
 
 <section class="macros">
@@ -177,19 +177,17 @@ import "./CalorieInfo.css";
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		/* align-items: center; */
 		gap: 2em;
 	}
 	.card {
-		/* padding: 1em 2em; */
-		position: relative;
-		margin-inline: auto;
 		--innerRadius: 30px;
 		--padding: 2em;
 		--outerRadius: calc(var(--innerRadius) + var(--padding));
 		border-radius: var(--outerRadius) 0;
 		padding-block: var(--padding);
 		padding-inline: var(--padding);
+		position: relative;
+		margin-inline: auto;
 	}
 
 	.card_macro {
@@ -251,12 +249,15 @@ import "./CalorieInfo.css";
 	}
 
 	.card_reason {
-		background-color: hsl(var(--bg-contrast));
+        color: hsl(var(--bg-contrast) / 0.9);
+		box-shadow: 2px 2px 10px 0px hsl(var(--accent-color) / .4);
+        border: 2px solid hsl(var(--accent-color) / .5);
+		/* background-color: hsl(var(--bg-contrast)); */
 		/* background: linear-gradient(-45deg, hsl(var(--accent-color)) 0%, hsl(var(--bg-contrast)) 20%, hsl(var(--bg-contrast)) 80%, hsl(var(--accent-color)) 100%); */
 	}
 
 	.card_reason .card_text {
-		color: hsl(var(--bg-color));
+		/* color: hsl(var(--bg-color)); */
 		/* font-size: 1.3em; */
 		line-height: 1.4;
 	}
@@ -270,7 +271,7 @@ import "./CalorieInfo.css";
 		/* inset: 2em; */
 	}
 	.card_icon path {
-		fill: hsl(var(--accent-color) / 0.5);
+		fill: hsl(var(--accent-color) / .8);
 	}
 
     .skew-topper{
