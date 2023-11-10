@@ -1,11 +1,10 @@
 .calc_wrapper {
 	display: grid;
 	place-items: center;
-	width: 100vw;
-	padding-block: var(--gutter);
+	/* width: 100vw; */
+	/* padding-block: var(--gutter); */
 	/* grid-template-areas: none; */
 	overflow: hidden;
-
 }
 
 form {
