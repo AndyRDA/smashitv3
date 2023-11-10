@@ -78,7 +78,7 @@ export default function Navbar(){
           </a>
         </li>
         <li>
-          <a href="#contact" class="current-page">Calorie Calculator</a>
+          <a href="" class="current-page">Calorie Calculator</a>
         </li>
         <li>
           <a id="contact" href="https://www.smashit.co.za/contact-2/" target="https://www.smashit.co.za/contact-2/">Contact</a>
