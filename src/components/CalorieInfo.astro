@@ -45,10 +45,10 @@
 		</div>
 	</div>
 	<div class="skew-divider skew-divider-bottom"></div>
-
 </section>
 <section class="reasons">
-	<div class="skew-topper"></div>
+	<div class="skew-divider skew-divider-top"></div>
+
 	<div class="text_wrapper">
 		<h2>Why choose Smash-It personal training and lifestyle coaching?</h2>
 	</div>
@@ -117,23 +117,27 @@
 			</div>
 		</div>
 	</div>
-    <div class="cta-wrapper">
-        <a class="cta" href="https://www.smashit.co.za/contact" target="_blank"> Enquire about Smash-It personal coaching</a>
-    </div>
+	<div class="cta-wrapper">
+		<a class="cta" href="https://www.smashit.co.za/contact" target="_blank">
+			Enquire about Smash-It personal coaching</a
+		>
+	</div>
+	<div class="skew-divider skew-divider-bottom"></div>
 </section>
 
 <style>
 	section {
-        --asym-border: 30px 6px 30px 6px;
+		--asym-border: 30px 6px 30px 6px;
+		--skew-divider-size: 10vw;
 		/* padding: 10rem var(--gutter) 12rem var(--gutter); */
 		position: relative;
-        overflow: hidden;
+		/* overflow: hidden; */
+		display: grid;
 	}
 	.macros {
-		display: grid;
 		gap: 2rem;
 		color: hsl(var(--bg-color));
-        background: hsl(var(--bg-contrast) / 0.9);
+		background: hsl(var(--bg-contrast) / 0.9);
 		/* background: linear-gradient(185deg, yellow 10%, blue 40%); */
 		background-image: url("../assets/images/food.jpg");
 		background-repeat: no-repeat;
@@ -146,19 +150,28 @@
 		position: absolute;
 		z-index: 0;
 		transform: skewY(-5deg);
-        height: 10rem;
-        width: 100%;
+		height: var(--skew-divider-size);
+		width: 100vw;
 	}
+	.skew-divider-top {
+		top: calc(var(--skew-divider-size) * -1);
+		transform-origin: bottom right;
+	}
+	.skew-divider-bottom {
+		bottom: calc(var(--skew-divider-size) * -1);
+		transform-origin: top left;
+	}
+	
 	.macros .skew-divider-top {
 		background-color: hsl(var(--bg-color));
-        top: -10rem;
-        transform-origin: bottom right;
 	}
 	.macros .skew-divider-bottom {
 		background-color: hsl(var(--bg-color));
-        bottom: -1.5rem;
-        transform-origin: bottom right;
 	}
+	.reasons .skew-divider-bottom {
+		background-color: hsl(var(--accent-color) / .2);
+	}
+
 
 	.text_wrapper {
 		max-width: 60ch;
@@ -243,27 +256,23 @@
 
 	.reasons {
 		background-color: hsl(var(--bg-color));
-        overflow: hidden;
-	}
-	.reasons .skew-divider {
-		/* background-color: hsl(var(--bg-color)); */
+		overflow: hidden;
 	}
 
 	.reasons .text_wrapper {
-   
 		color: hsl(var(--bg-contrast) / 0.9);
 		z-index: 55;
 	}
 
 	.reasons .card_wrapper {
-		padding-block: 6rem;
+		padding-block: 6rem 3rem;
 		gap: 3em;
 	}
 
 	.card_reason {
-        color: hsl(var(--bg-contrast) / 0.9);
-		box-shadow: 2px 2px 10px 0px hsl(var(--accent-color) / .4);
-        border: 2px solid hsl(var(--accent-color) / .5);
+		color: hsl(var(--bg-contrast) / 0.9);
+		box-shadow: 2px 2px 10px 0px hsl(var(--accent-color) / 0.4);
+		border: 2px solid hsl(var(--accent-color) / 0.5);
 		/* background-color: hsl(var(--bg-contrast)); */
 		/* background: linear-gradient(-45deg, hsl(var(--accent-color)) 0%, hsl(var(--bg-contrast)) 20%, hsl(var(--bg-contrast)) 80%, hsl(var(--accent-color)) 100%); */
 	}
@@ -283,35 +292,15 @@
 		/* inset: 2em; */
 	}
 	.card_icon path {
-		fill: hsl(var(--accent-color) / .8);
+		fill: hsl(var(--accent-color) / 0.8);
 	}
 
-    .skew-topper{
-        --height: 9rem;
-        --topper-color: hsl(var(--bg-color));
-        position: absolute;
-        height: var(--height);
-        width: 100%;
-        /* background: linear-gradient(180deg, transparent 40%, hsl(var(--topper-color)) 50%); */
-        background-color: var(--topper-color);
-        /* top: 0; */
-        bottom: calc(var(--height) * -1);
-        left:0;
-        transform: skewY(-5deg);
-        transform-origin: top left;
-        z-index: 0;
-    }
-
-    .reasons .skew-topper{
-        --topper-color: hsl(var(--accent-color) / .2)
-    }
-
-    .cta-wrapper {
+	.cta-wrapper {
 		display: grid;
 		justify-content: center;
 		align-items: center;
 		/* padding: 4vw 2vw; */
-        padding-block: 32px;
+		padding-block: 32px;
 		/* z-index: 99; */
 		/* outline: 1px solid blue; */
 	}
@@ -324,11 +313,11 @@
 		background-color: hsl(var(--accent-color));
 		font-size: clamp(1rem, 1rem + 0.5vw, 1.75rem);
 		color: hsl(var(--bg-contrast));
-		box-shadow: 2px 2px 10px 0px hsl(var(--accent-color) / .4);
+		box-shadow: 2px 2px 10px 0px hsl(var(--accent-color) / 0.4);
 		/* box-shadow: 3px 3px 3px 0px hsl(var(--accent-color) / 0.3); */
 		transition: all 200ms ease-in-out;
-        cursor: pointer;
-        opacity: 1;
+		cursor: pointer;
+		opacity: 1;
 	}
 
 	.cta:hover,
