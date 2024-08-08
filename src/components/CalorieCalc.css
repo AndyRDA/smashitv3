@@ -1,7 +1,7 @@
 .calc_wrapper {
 	display: grid;
 	place-items: center;
-	/* width: 100vw; */
+	width: 100%;
 	/* padding-block: var(--gutter); */
 	/* grid-template-areas: none; */
 	overflow: hidden;
@@ -308,7 +308,7 @@ form[data-show-results="false"] {
 
 .results-cta_link{
     display: block;
-    max-width: 35ch;
+    /* max-width: 35ch; */
     padding: 1em 2em;
     border: 1px solid hsl(var(--accent-color) / 0.8);
     border-radius: 30px 6px 30px 6px;
@@ -342,7 +342,7 @@ form[data-show-results="false"] {
 		grid-template-columns: 200px 1fr;
 		grid-template-areas: 
 		"form results"
-		"cta cta";
+		". cta";
 	}
 
 	form[data-show-results="true"] {
@@ -372,6 +372,7 @@ form[data-show-results="false"] {
 	label[data-show-results="true"] svg {
 		--icon-height: 1.5em;
 	}
+	
 	.sex_fieldset[data-show-results="true"] {
 		align-items: flex-start;
 		padding-left: 1.5em;
@@ -380,6 +381,13 @@ form[data-show-results="false"] {
 	.sex_radio_label[data-show-results="true"] > svg {
 		width: 1.5em;
 		height: 1.5em;
+	}
+	.sex_fieldset[data-show-results="true"] label:first-of-type {
+		border-radius: 6px 0 0 6px;
+	}
+	.sex_fieldset[data-show-results="true"] label:last-of-type {
+		border-radius: 0 6px 6px 0;
+		border-left: none;
 	}
 
 	.results_wrapper[data-show-results="true"] {
@@ -416,9 +424,9 @@ form[data-show-results="false"] {
 	}
 }
 
-@media (min-width: 1220px){
+/* @media (min-width: 1220px){
 	.calc_wrapper[data-show-results="true"] {
 		grid-template-columns: 300px 1fr 300px;
 		grid-template-areas: "form results cta";
 	}
-}
+} */
